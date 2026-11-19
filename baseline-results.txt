@@ -1,0 +1,27 @@
+test_discount_does_not_affect_shipping (test_checkout.CheckoutTests.test_discount_does_not_affect_shipping) ... FAIL
+test_invalid_discount (test_checkout.CheckoutTests.test_invalid_discount) ... ok
+test_regular_checkout (test_checkout.CheckoutTests.test_regular_checkout) ... ok
+test_tiny_order_cannot_be_negative (test_checkout.CheckoutTests.test_tiny_order_cannot_be_negative) ... FAIL
+
+======================================================================
+FAIL: test_discount_does_not_affect_shipping (test_checkout.CheckoutTests.test_discount_does_not_affect_shipping)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/devins-nightmare/tests/test_checkout.py", line 9, in test_discount_does_not_affect_shipping
+    self.assertEqual(checkout(100, 10, 20), 90.0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 88.0 != 90.0
+
+======================================================================
+FAIL: test_tiny_order_cannot_be_negative (test_checkout.CheckoutTests.test_tiny_order_cannot_be_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/devins-nightmare/tests/test_checkout.py", line 12, in test_tiny_order_cannot_be_negative
+    self.assertEqual(checkout(0.5, 0, 0), 0.5)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -4.5 != 0.5
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=2)
